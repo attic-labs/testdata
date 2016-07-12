@@ -1,0 +1,10 @@
+How these files were prepared:
+
+- Download from https://data.sfgov.org/Public-Safety/SFPD-Incidents-from-1-January-2003
+  - Download the "excel csv format" (which is actually tab-delimited haha!)
+- sort the csv textually:
+  - capture the header: head -n1 file.csv > head.csv 
+  - use `wc -l` to get the number of lines in the output
+  - use `tail -n<output of previous minus 1> > | sort newfile.csv` to sort the lines not including the header
+  - use `cat head.csv newfile.csv > newfile2.csv`
+  - remove all the temp files
